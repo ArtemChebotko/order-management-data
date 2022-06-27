@@ -9,7 +9,7 @@ Cancel order `113-3827060-8722206` placed by user `joe` on `2020-11-17` at `22:2
 <details>
   <summary>Solution</summary>
 
-<p>Step 1. Update the "source-of-truth" table using a light weight transaction:</p>
+<p>Step 1. Update the "source-of-truth" table using a lightweight transaction:</p>
 
 ```
 UPDATE orders_by_id 
