@@ -44,7 +44,7 @@ WHERE order_id = '113-3827060-8722206'
   AND user_id = 'joe'
   AND order_timestamp = '2020-11-17 22:20:43';
 
-SELECT order_status 
+SELECT order_status
 FROM order_status_history_by_id
 WHERE order_id = '113-3827060-8722206'
 LIMIT 1;
