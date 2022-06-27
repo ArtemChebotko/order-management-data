@@ -26,7 +26,7 @@ SET order_status = 'canceled'
 WHERE order_id = '113-3827060-8722206'
   AND user_id = 'joe'
   AND order_timestamp = '2020-11-17 22:20:43';
-  
+
 INSERT INTO order_status_history_by_id (order_id, status_timestamp, order_status)
 VALUES ('113-3827060-8722206',TOTIMESTAMP(NOW()),'canceled');
 ```
@@ -43,7 +43,7 @@ FROM orders_by_user
 WHERE order_id = '113-3827060-8722206'
   AND user_id = 'joe'
   AND order_timestamp = '2020-11-17 22:20:43';
-  
+
 SELECT order_status 
 FROM order_status_history_by_id
 WHERE order_id = '113-3827060-8722206'
