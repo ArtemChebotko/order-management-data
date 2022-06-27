@@ -1,19 +1,22 @@
 <div class="top">
 
-# Design query Q4
-### [◂](command:katapod.loadPage?step4){.steps} Step 5 of 10 [▸](command:katapod.loadPage?step6){.steps}
+# Design query Q2
+### [◂](command:katapod.loadPage?step4){.steps} Step 5 of 8 [▸](command:katapod.loadPage?step6){.steps}
 </div>
 
-Find ids and names of all shopping carts that belong to user `jen`; order by cart name (asc):
+Find all information about order `113-3827060-8722206`; sort items by name (asc):
  
 <details>
   <summary>Solution</summary>
 
 ```
-SELECT user_id, cart_name, 
-       cart_id, cart_is_active
-FROM carts_by_user
-WHERE user_id = 'jen';
+EXPAND ON;
+
+SELECT * 
+FROM orders_by_id
+WHERE order_id = '113-3827060-8722206';
+
+EXPAND OFF;
 ```
 
 </details>

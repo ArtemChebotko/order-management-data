@@ -1,34 +1,19 @@
 <div class="top">
 
-# Design update U2
-### [◂](command:katapod.loadPage?step5){.steps} Step 6 of 10 [▸](command:katapod.loadPage?step7){.steps}
+# Design query Q3
+### [◂](command:katapod.loadPage?step5){.steps} Step 6 of 8 [▸](command:katapod.loadPage?step7){.steps}
 </div>
 
-Save an active shopping cart with name `My Birthday` and id `4e66baf8-f3ad-4c3b-9151-52be4574f2de`, 
-and designate a different cart with name `Gifts for Mom` and id `19925cc1-4f8b-4a44-b893-2a49a8434fc8` to be a new active shopping cart for user `jen`:
+Find all orders that contain item `n-0023` and are placed by user `joe`; sort by order timestamp (desc):
 
 <details>
   <summary>Solution</summary>
 
 ```
-BEGIN BATCH
-  UPDATE carts_by_user 
-  SET cart_is_active = false
-  WHERE user_id = 'jen'
-    AND cart_name = 'My Birthday'
-    AND cart_id = 4e66baf8-f3ad-4c3b-9151-52be4574f2de
-  IF cart_is_active = true;
-  UPDATE carts_by_user 
-  SET cart_is_active = true
-  WHERE user_id = 'jen'
-    AND cart_name = 'Gifts for Mom'
-    AND cart_id = 19925cc1-4f8b-4a44-b893-2a49a8434fc8;
-APPLY BATCH;
-
-SELECT user_id, cart_name, 
-       cart_id, cart_is_active
-FROM carts_by_user
-WHERE user_id = 'jen';
+SELECT * 
+FROM orders_by_user_item
+WHERE item_id = 'n-0023'
+  AND user_id = 'joe';  
 ```
 
 </details>

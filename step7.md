@@ -1,18 +1,18 @@
 <div class="top">
 
-# Design query Q2
-### [◂](command:katapod.loadPage?step6){.steps} Step 7 of 10 [▸](command:katapod.loadPage?step8){.steps}
+# Design query Q4
+### [◂](command:katapod.loadPage?step6){.steps} Step 7 of 8 [▸](command:katapod.loadPage?step8){.steps}
 </div>
 
-Find all information about an item with id `Box2`:
+Find a status history for order `111-0461064-1669732`; sort by status timestamp (desc):
 
 <details>
   <summary>Solution</summary>
 
 ```
 SELECT * 
-FROM items_by_id
-WHERE id = 'Box2';
+FROM order_status_history_by_id
+WHERE order_id = '111-0461064-1669732'; 
 ```
 
 </details>
